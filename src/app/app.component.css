@@ -1,4 +1,41 @@
+header {
+  background-color: #E8E8E8;
+  color: #836FFF;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+header.dark {
+  background-color: #363636;
+  color: #836FFF;
+}
+
+footer {
+  background-color: #E8E8E8;
+  color: #836FFF;
+  width: 100%;
+  height: 80px;
+  display: flex;
+}
+
+h3 {
+  margin-left: 5px;
+  width: fit-content;
+  cursor: default;
+}
+
 p {
   font-family: Lato;
+}
+
+.content {
+  margin-top: 60px;
 }
 

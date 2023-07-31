@@ -1,0 +1,17 @@
+.dashboard {
+    
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    flex-wrap: wrap;
+}
+
+.loading {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    margin-top: 50px;
+    width: 100%;
+}

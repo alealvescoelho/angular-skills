@@ -1,5 +1,15 @@
-<h3>
-  My Skills
-</h3>
-
-<app-dashboard></app-dashboard>
+<header [ngClass]="{ dark: isDark }">
+  <div class="title">
+    <h3>My Skills</h3>
+  </div>
+  <div class="theme">
+    <button mat-stroked-button (click)="onTheme()">
+      <span *ngIf="!isDark" class="material-icons"> light_mode </span>
+      <span *ngIf="isDark" class="material-icons"> dark_mode </span>
+    </button>
+    <!-- <mat-slide-toggle [color]="color" [(ngModel)]="isDark"></mat-slide-toggle> -->
+  </div>
+</header>
+<div class="content">
+  <app-dashboard [isDark]="isDark"></app-dashboard>
+</div>

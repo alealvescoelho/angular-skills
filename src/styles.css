@@ -1,2 +1,18 @@
 /* Add application styles & imports to this file! */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body {
+    overflow-x: hidden;
+    background-color: #6959CD;
+    display: flex;
+    flex-direction: column;
+}
+
+body::-webkit-scrollbar{
+    width: 0px
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: auto;
+}

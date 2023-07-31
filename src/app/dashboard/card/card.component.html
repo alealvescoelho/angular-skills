@@ -1,15 +1,77 @@
-<mat-card class="example-card">
-  <mat-card-header>
-    <mat-card-title>{{card.name}}</mat-card-title>
-  </mat-card-header>
-  <img mat-card-image [src]="card.pic" alt="Photo of a Shiba Inu">
-  <mat-card-content>
+<!-- <div class="example-card">
+  <div-header>
+    <div-title>{{card.name}}</div-title>
+  </div-header>
+  <img div-image [src]="card.pic" alt="Photo of a Shiba Inu">
+  <div-content>
     <p>
       {{card.description}}
     </p>
-  </mat-card-content>
-  <mat-card-actions>
+  </div-content>
+  <div-actions>
     <button mat-button>LIKE {{card.likes}}</button>
     <button mat-button>SHARE</button>
+  </div-actions>
+</div> -->
+<!-- <div class="card">
+  <div class="header">
+    <div>{{ card.name }}</div>
+  </div>
+  <div class="image">
+    <img [src]="card.pic" alt="Photo of a Shiba Inu" />
+  </div>
+  <div class="content">
+    <p>
+      {{ card.description }}
+    </p>
+  </div>
+  <div class="footer">
+    <button mat-button>LIKE {{ card.likes }}</button>
+    <button mat-button>SHARE</button>
+  </div>
+</div> -->
+<mat-card class="card" [ngClass]="{ dark: isDark }">
+  <mat-card-header class="header">
+    <h4>{{ card.name }}</h4>
+  </mat-card-header>
+  <img [src]="card.pic" [alt]="card.name" />
+  <mat-card-content class="content">
+    <p>
+      {{ card.description }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions class="footer">
+    <button
+      *ngIf="card.likes < 5"
+      mat-button
+      matTooltip="Like"
+      (click)="onLike(card)"
+    >
+      <span class="material-icons"> thumb_up </span>
+      {{ card.likes }}
+    </button>
+    <button
+      *ngIf="card.likes > 4 && card.likes < 11"
+      mat-button
+      matTooltip="Like"
+      class="greate"
+      (click)="onLike(card)"
+    >
+      <span class="material-icons"> thumb_up </span>
+      {{ card.likes }}
+    </button>
+    <button
+      *ngIf="card.likes > 10"
+      mat-button
+      matTooltip="Like"
+      class="amazing"
+      (click)="onLike(card)"
+    >
+      <span class="material-icons"> thumb_up </span>
+      {{ card.likes }}
+    </button>
+    <button mat-button matTooltip="Share" (click)="onShare()">
+      <span class="material-icons"> share </span>
+    </button>
   </mat-card-actions>
 </mat-card>
